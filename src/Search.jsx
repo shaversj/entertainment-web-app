@@ -9,7 +9,7 @@ const Search = () => {
   );
 
   return (
-    <div className={"flex items-center gap-x-4"}>
+    <div className={"flex items-center gap-x-4 pt-[24px]"}>
       {iconSearch}
       <input
         className={"h-[20px] w-[216px] bg-dark-blue font-extralight text-white caret-bright-red outline-0 focus:placeholder-transparent"}
