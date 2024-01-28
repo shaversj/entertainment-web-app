@@ -41,7 +41,7 @@ const Nav = () => {
       {iconNavMovies}
       {iconNavTVSeries}
       {iconNavBookmark}
-      <img className={"ml-auto h-[28px] w-[28px]"} src={avatar} alt={""} />
+      <img className={"ml-auto h-[28px] w-[28px] rounded-full border-[1px]"} src={avatar} alt={""} />
     </nav>
   );
 };
