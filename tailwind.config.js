@@ -12,6 +12,7 @@ export default {
         "dark-blue": "#10141E",
         "greyish-blue": "#5A698F",
         "semi-dark-blue": "#161D2F",
+        "project-text-color": "#cfd0d4",
       },
       fontFamily: {
         Outfit: ["Outfit", "sans-serif"],

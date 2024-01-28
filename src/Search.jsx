@@ -12,7 +12,7 @@ const Search = () => {
     <div className={"flex items-center gap-x-4"}>
       {iconSearch}
       <input
-        className={"focus:ring- h-[20px] w-[216px] bg-dark-blue font-light caret-bright-red outline-0 focus:placeholder-transparent"}
+        className={"h-[20px] w-[216px] bg-dark-blue font-extralight text-white caret-bright-red outline-0 focus:placeholder-transparent"}
         type={"text"}
         placeholder={"Search for movies or TV series"}
       />

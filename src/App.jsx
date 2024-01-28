@@ -1,11 +1,12 @@
 import Nav from "./Nav.jsx";
 import Search from "./Search.jsx";
+import TrendingCard from "./TrendingCard.jsx";
 
 function App() {
   return (
     <>
       <div className={"flex min-h-screen items-center justify-center bg-black"}>
-        <div className={"min-h-[667px] min-w-[375px] max-w-screen-sm bg-dark-blue font-Outfit"}>
+        <div className={"min-h-[667px] min-w-[375px] max-w-screen-sm bg-dark-blue  font-Outfit"}>
           <main>
             {/*Nav*/}
             <Nav />
@@ -14,7 +15,9 @@ function App() {
             <Search />
 
             {/*Trending*/}
-            <section></section>
+            <section>
+              <TrendingCard />
+            </section>
 
             {/*Recommended for you*/}
             <section></section>

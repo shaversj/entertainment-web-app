@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#trendingCard {
+    display: grid;
+    grid-template-areas: box;
+
+}
+
+#trendingCard img {
+    grid-area: box;
+}
+
+#trendingBookmark {
+    grid-area: box;
+    justify-self: end;
+}
+
+#card_text {
+    grid-area: box;
+    align-self: end;
+}
+
+/*li {*/
+/*    display: inline-block;*/
+
+/*}*/
+
+/*li:before {*/
+/*    content: '\00a0\2022\00a0\00a0';*/
+/*    color:#cfd0d4;*/
+/*    font-size:12px;*/
+/*}*/
+
+
+/*li:first-child:before {*/
+/*    content: '';*/
+/*}*/
