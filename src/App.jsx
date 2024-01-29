@@ -1,9 +1,12 @@
 import Nav from "./Nav.jsx";
 import Search from "./Search.jsx";
-import TrendingCard from "./TrendingCard.jsx";
 import TrendingList from "./TrendingList.jsx";
+import customData from "/src/assets/design/starter-code/data.json";
+import SectionList from "./SectionList.jsx";
 
 function App() {
+  function handleBookmark() {}
+
   return (
     <>
       <div className={"flex min-h-screen items-center justify-center bg-black"}>
@@ -15,12 +18,10 @@ function App() {
             <Search />
 
             {/*Trending*/}
-            <section>
-              <TrendingList />
-            </section>
+            <TrendingList data={customData} handleBookmark={handleBookmark} />
 
             {/*Recommended for you*/}
-            <section></section>
+            <SectionList title={"Recommended for you"} data={customData} handleBookmark={handleBookmark} />
           </main>
         </div>
       </div>

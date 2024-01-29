@@ -3,38 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
-#trendingCard {
+#card {
     display: grid;
     grid-template-areas: box;
 
 }
 
-#trendingCard img {
+#card picture {
     grid-area: box;
 }
 
-#trendingBookmark {
+#card_bookmark {
     grid-area: box;
     justify-self: end;
 }
 
-#card_text {
+#card_trending_text {
     grid-area: box;
     align-self: end;
 }
-
-/*li {*/
-/*    display: inline-block;*/
-
-/*}*/
-
-/*li:before {*/
-/*    content: '\00a0\2022\00a0\00a0';*/
-/*    color:#cfd0d4;*/
-/*    font-size:12px;*/
-/*}*/
-
-
-/*li:first-child:before {*/
-/*    content: '';*/
-/*}*/
