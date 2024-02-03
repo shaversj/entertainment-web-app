@@ -1,19 +1,65 @@
 import Card from "./Card.jsx";
+import useDrag from "./useDrag.jsx";
+import { useState } from "react";
+import { ScrollMenu } from "react-horizontal-scrolling-menu";
 
 const TrendingList = ({ data, handleBookmark }) => {
+  const trendingList = data.filter((item) => item.isTrending);
+
+  const { dragStart, dragStop, dragMove, dragging } = useDrag();
+  const handleDrag =
+    ({ scrollContainer }) =>
+    (ev) =>
+      dragMove(ev, (posDiff) => {
+        if (scrollContainer.current) {
+          scrollContainer.current.scrollLeft += posDiff;
+        }
+      });
+
+  const [selected, setSelected] = useState("");
+  const handleItemClick = (itemId) => () => {
+    if (dragging) {
+      return false;
+    }
+    setSelected(selected !== itemId ? itemId : "");
+  };
+
+  function onWheel(apiObj, ev) {
+    const isThouchpad = Math.abs(ev.deltaX) !== 0 || Math.abs(ev.deltaY) < 15;
+
+    if (isThouchpad) {
+      ev.stopPropagation();
+      return;
+    }
+
+    if (ev.deltaY < 0) {
+      apiObj.scrollNext();
+    } else if (ev.deltaY > 0) {
+      apiObj.scrollPrev();
+    }
+  }
+
   return (
     <div className={"space-y-[16px]"}>
       <h1 className={"text-[20px] font-extralight text-white"}>Trending</h1>
-      <Card
-        title={data[0].title}
-        thumbnail={data[0].thumbnail}
-        year={data[0].year}
-        category={data[0].category}
-        rating={data[0].rating}
-        isBookmarked={data[0].isBookmarked}
-        isTrending={data[0].isTrending}
-        handleBookmark={handleBookmark}
-      />
+      <div onMouseLeave={dragStop} className={""}>
+        <ScrollMenu LeftArrow={"A"} RightArrow={"B"} onWheel={onWheel} onMouseDown={() => dragStart} onMouseUp={() => dragStop} onMouseMove={handleDrag}>
+          {trendingList.map((item, idx) => (
+            <Card
+              key={idx}
+              itemId={idx}
+              title={item.title}
+              thumbnail={item.thumbnail}
+              year={item.year}
+              category={item.category}
+              rating={item.rating}
+              isBookmarked={item.isBookmarked}
+              isTrending={item.isTrending}
+              handleBookmark={handleBookmark}
+            />
+          ))}
+        </ScrollMenu>
+      </div>
     </div>
   );
 };

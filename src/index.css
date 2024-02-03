@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
 #card {
     display: grid;
     grid-template-areas: box;
@@ -21,4 +29,17 @@
 #card_trending_text {
     grid-area: box;
     align-self: end;
+}
+
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }

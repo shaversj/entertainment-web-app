@@ -1,4 +1,4 @@
-const Card = ({ title, thumbnail, year, category, rating, isBookmarked, isTrending, handleBookmark }) => {
+const Card = ({ title, thumbnail, year, category, rating, isBookmarked, isTrending, handleBookmark, handleDragClick }) => {
   const iconBookmarkEmpty = (
     <svg id={"emptyBookmark "} className={"h-[14px] w-[11.67px]"} viewBox={"0 0 12 14"} xmlns="http://www.w3.org/2000/svg">
       <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" stroke="#FFF" strokeWidth="1.5" fill="none" />
