@@ -1,4 +1,4 @@
-const Search = () => {
+const Search = ({ handleTitleFilter, placeholder }) => {
   const iconSearch = (
     <svg className={"h-[24px] w-[24px]"} viewBox={"0 0 32 32"} width="32" height="32" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -14,7 +14,8 @@ const Search = () => {
       <input
         className={"h-[20px] w-[216px] bg-dark-blue font-extralight text-white caret-bright-red outline-0 focus:placeholder-transparent"}
         type={"text"}
-        placeholder={"Search for movies or TV series"}
+        onChange={(e) => handleTitleFilter(e.target.value)}
+        placeholder={placeholder}
       />
     </div>
   );

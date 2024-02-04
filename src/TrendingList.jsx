@@ -55,6 +55,7 @@ const TrendingList = ({ data, handleBookmark }) => {
               rating={item.rating}
               isBookmarked={item.isBookmarked}
               isTrending={item.isTrending}
+              isTendingSection={true}
               handleBookmark={handleBookmark}
             />
           ))}
