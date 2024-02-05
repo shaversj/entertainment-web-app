@@ -1,16 +1,15 @@
 import Card from "./Card.jsx";
-import { useState } from "react";
 
 const SectionList = ({ title, data, handleBookmark, titleFilter = "" }) => {
-  const filteredData = data.filter((item) => (titleFilter.length >= 1 && item.title.toLowerCase().includes(titleFilter.toLowerCase())) || (titleFilter === "" && !item.isTrending));
-  let searchResultHeading = "Found " + filteredData.length + " results for '" + titleFilter + "'";
+  let searchResultHeading = "Found " + data.length + " results for '" + titleFilter + "'";
   return (
     <div className={"space-y-[16px]"}>
       <h1 className={"text-[20px] font-extralight text-white"}>{titleFilter ? searchResultHeading : title}</h1>
       <div className={"grid grid-cols-2 gap-x-4"}>
-        {filteredData &&
-          filteredData.map((item) => (
+        {data &&
+          data.map((item, idx) => (
             <Card
+              key={idx}
               title={item.title}
               thumbnail={item.thumbnail}
               year={item.year}

@@ -4,8 +4,6 @@ import { useState } from "react";
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
 
 const TrendingList = ({ data, handleBookmark }) => {
-  const trendingList = data.filter((item) => item.isTrending);
-
   const { dragStart, dragStop, dragMove, dragging } = useDrag();
   const handleDrag =
     ({ scrollContainer }) =>
@@ -44,7 +42,7 @@ const TrendingList = ({ data, handleBookmark }) => {
       <h1 className={"text-[20px] font-extralight text-white"}>Trending</h1>
       <div onMouseLeave={dragStop} className={""}>
         <ScrollMenu LeftArrow={"A"} RightArrow={"B"} onWheel={onWheel} onMouseDown={() => dragStart} onMouseUp={() => dragStop} onMouseMove={handleDrag}>
-          {trendingList.map((item, idx) => (
+          {data.map((item, idx) => (
             <Card
               key={idx}
               itemId={idx}

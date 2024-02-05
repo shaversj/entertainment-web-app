@@ -8,7 +8,9 @@ const SharedLayout = () => {
         <div className={"min-h-[667px] w-full min-w-[375px] max-w-screen-sm bg-dark-blue font-Outfit"}>
           {/*Nav*/}
           <Nav />
-          <Outlet />
+          <main className={"space-y-[24px] px-4"}>
+            <Outlet />
+          </main>
         </div>
       </div>
     </>
