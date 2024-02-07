@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Search from "../components/Search.jsx";
 import TrendingList from "../components/TrendingList.jsx";
-import allShowsAndMovies from "../assets/design/starter-code/data.json";
 import SectionList from "../components/SectionList.jsx";
+import { data } from "../projectData.jsx";
 
 const Home = () => {
   const [titleFilter, setTitleFilter] = useState("");
@@ -11,9 +11,9 @@ const Home = () => {
     setTitleFilter(value);
   }
 
-  let trendingShowsAndMovies = allShowsAndMovies.filter((item) => item.isTrending);
-  let nonTrendingShowsAndMovies = allShowsAndMovies.filter((item) => !item.isTrending);
-  let filteredByTitle = allShowsAndMovies.filter((item) => titleFilter.length >= 1 && item.title.toLowerCase().includes(titleFilter.toLowerCase()));
+  let trendingShowsAndMovies = data.filter((item) => item.isTrending);
+  let nonTrendingShowsAndMovies = data.filter((item) => !item.isTrending);
+  let filteredByTitle = data.filter((item) => titleFilter.length >= 1 && item.title.toLowerCase().includes(titleFilter.toLowerCase()));
 
   return (
     <>
