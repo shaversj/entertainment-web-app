@@ -2,11 +2,22 @@ import { useState } from "react";
 import Search from "../components/Search.jsx";
 import TrendingList from "../components/TrendingList.jsx";
 import SectionList from "../components/SectionList.jsx";
-import { data } from "../projectData.jsx";
+import { originalData } from "../projectData.jsx";
 
 const Home = () => {
   const [titleFilter, setTitleFilter] = useState("");
-  function handleBookmark() {}
+  const [data, setData] = useState(originalData);
+  function handleBookmark(id) {
+    setData(
+      data.map((item) => {
+        if (item.id === id) {
+          return { ...item, isBookmarked: !item.isBookmarked };
+        } else {
+          return item;
+        }
+      }),
+    );
+  }
   function handleTitleFilter(value) {
     setTitleFilter(value);
   }

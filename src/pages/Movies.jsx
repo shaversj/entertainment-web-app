@@ -1,11 +1,11 @@
 import Search from "../components/Search.jsx";
 import SectionList from "../components/SectionList.jsx";
 import { useState } from "react";
-import { data } from "../projectData.jsx";
+import { originalData } from "../projectData.jsx";
 
 const Movies = () => {
   const [titleFilter, setTitleFilter] = useState("");
-  let allMovies = data.filter((item) => item.category === "Movie");
+  let allMovies = originalData.filter((item) => item.category === "Movie");
   let filteredMovies = allMovies.filter((item) => titleFilter.length >= 1 && item.title.toLowerCase().includes(titleFilter.toLowerCase()));
 
   function handleBookmark() {}

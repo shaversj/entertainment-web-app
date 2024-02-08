@@ -1,4 +1,4 @@
-const Card = ({ title, thumbnail, year, category, rating, isBookmarked, isTrending, isTendingSection, handleBookmark, handleDragClick }) => {
+const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTrending, isTendingSection, handleBookmark, handleDragClick }) => {
   const iconBookmarkEmpty = (
     <svg id={"emptyBookmark "} className={"h-[14px] w-[11.67px]"} viewBox={"0 0 12 14"} xmlns="http://www.w3.org/2000/svg">
       <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" stroke="#FFF" strokeWidth="1.5" fill="none" />
@@ -38,7 +38,7 @@ const Card = ({ title, thumbnail, year, category, rating, isBookmarked, isTrendi
             <source srcSet={"src" + thumbnail.trending.large.substring(1)} media="(min-width: 1440px)" />
             <img className={"rounded-lg"} src={"src" + thumbnail.trending.small.substring(1)} alt={""} />
           </picture>
-          <button onClick={handleBookmark} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
+          <button onClick={() => handleBookmark(title)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
             {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}
           </button>
 
@@ -68,7 +68,7 @@ const Card = ({ title, thumbnail, year, category, rating, isBookmarked, isTrendi
               <source srcSet={"src" + thumbnail.regular.medium.substring(1)} media="(min-width: 800px)" />
               <img className={"rounded-lg"} src={"src" + thumbnail.regular.small.substring(1)} alt={""} />
             </picture>
-            <button onClick={handleBookmark} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
+            <button onClick={() => handleBookmark(id)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
               {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}
             </button>
           </div>

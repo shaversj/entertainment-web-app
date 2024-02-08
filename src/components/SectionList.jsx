@@ -7,9 +7,10 @@ const SectionList = ({ title, data, handleBookmark, titleFilter = "" }) => {
       <h1 className={"text-[20px] font-extralight text-white"}>{titleFilter ? searchResultHeading : title}</h1>
       <div className={"grid grid-cols-2 gap-x-4"}>
         {data &&
-          data.map((item, idx) => (
+          data.map((item) => (
             <Card
-              key={idx}
+              key={item.id}
+              id={item.id}
               title={item.title}
               thumbnail={item.thumbnail}
               year={item.year}

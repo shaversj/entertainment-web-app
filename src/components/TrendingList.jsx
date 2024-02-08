@@ -42,10 +42,10 @@ const TrendingList = ({ data, handleBookmark }) => {
       <h1 className={"text-[20px] font-extralight text-white"}>Trending</h1>
       <div onMouseLeave={dragStop} className={""}>
         <ScrollMenu LeftArrow={"A"} RightArrow={"B"} onWheel={onWheel} onMouseDown={() => dragStart} onMouseUp={() => dragStop} onMouseMove={handleDrag}>
-          {data.map((item, idx) => (
+          {data.map((item) => (
             <Card
-              key={idx}
-              itemId={idx}
+              key={item.id}
+              itemId={item.id}
               title={item.title}
               thumbnail={item.thumbnail}
               year={item.year}
