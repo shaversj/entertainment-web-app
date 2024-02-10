@@ -7,9 +7,10 @@ const Bookmarked = () => {
   const { data, handleBookmark } = useOutletContext();
   let bookmarkedMovies = data.filter((item) => item.isBookmarked && item.category === "Movie");
   let bookmarkedTVSeries = data.filter((item) => item.isBookmarked && item.category === "TV Series");
+  let allBookmarkedShows = data.filter((item) => item.isBookmarked);
 
-  let filteredBookmarkedMovies = bookmarkedMovies.filter((item) => titleFilter.length >= 1 && item.title.toLowerCase().includes(titleFilter.toLowerCase()));
-  let filteredBookmarkedTVSeries = bookmarkedTVSeries.filter((item) => titleFilter.length >= 1 && item.title.toLowerCase().includes(titleFilter.toLowerCase()));
+  let filteredBookmarkedShowsByTitle = allBookmarkedShows.filter((item) => titleFilter.length >= 1 && item.title.toLowerCase().includes(titleFilter.toLowerCase()));
+  let searchResultHeading = "Found " + filteredBookmarkedShowsByTitle.length + " results for '" + titleFilter + "'";
 
   function handleTitleFilter(value) {
     setTitleFilter(value);
@@ -17,8 +18,8 @@ const Bookmarked = () => {
   return (
     <>
       <Search handleTitleFilter={handleTitleFilter} placeholder={"Search for bookmarked shows"} />
-      <SectionList title={"Bookmarked Movies"} data={titleFilter ? filteredBookmarkedMovies : bookmarkedMovies} handleBookmark={handleBookmark} titleFilter={titleFilter} />
-      {!titleFilter && <SectionList title={"Bookmarked TV Series"} data={titleFilter ? filteredBookmarkedTVSeries : bookmarkedTVSeries} handleBookmark={handleBookmark} titleFilter={titleFilter} />}
+      <SectionList title={titleFilter ? searchResultHeading : "Bookmarked Movies"} data={titleFilter ? filteredBookmarkedShowsByTitle : bookmarkedMovies} handleBookmark={handleBookmark} />
+      {!titleFilter && <SectionList title={"Bookmarked TV Series"} data={bookmarkedTVSeries} handleBookmark={handleBookmark} titleFilter={titleFilter} />}
     </>
   );
 };

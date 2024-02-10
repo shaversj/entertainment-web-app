@@ -14,13 +14,14 @@ const Home = () => {
 
   let trendingShowsAndMovies = data.filter((item) => item.isTrending);
   let nonTrendingShowsAndMovies = data.filter((item) => !item.isTrending);
-  let filteredByTitle = data.filter((item) => titleFilter.length >= 1 && item.title.toLowerCase().includes(titleFilter.toLowerCase()));
+  let filteredShowsByTitle = data.filter((item) => titleFilter.length >= 1 && item.title.toLowerCase().includes(titleFilter.toLowerCase()));
+  let searchResultHeading = "Found " + filteredShowsByTitle.length + " results for '" + titleFilter + "'";
 
   return (
     <>
       <Search handleTitleFilter={handleTitleFilter} placeholder={"Search for movies or TV series"} />
       {!titleFilter && <TrendingList data={trendingShowsAndMovies} handleBookmark={handleBookmark} />}
-      <SectionList title={"Recommended for you"} data={titleFilter ? filteredByTitle : nonTrendingShowsAndMovies} handleBookmark={handleBookmark} titleFilter={titleFilter} />
+      <SectionList title={titleFilter ? searchResultHeading : "Recommended for you"} data={titleFilter ? filteredShowsByTitle : nonTrendingShowsAndMovies} handleBookmark={handleBookmark} />
     </>
   );
 };
