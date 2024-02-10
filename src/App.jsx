@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import Root from "./components/Root.jsx";
 import SharedLayout from "./components/SharedLayout.jsx";
 import Movies from "./pages/Movies.jsx";
 import TVSeries from "./pages/TVSeries.jsx";
@@ -17,7 +16,6 @@ const router = createBrowserRouter([
       { path: "/bookmarked", Component: Bookmarked },
     ],
   },
-  { path: "*", Component: Root },
 ]);
 
 function App() {
