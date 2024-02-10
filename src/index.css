@@ -14,7 +14,6 @@ img {
 #card {
     display: grid;
     grid-template-areas: box;
-
 }
 
 #card picture {
@@ -42,4 +41,11 @@ img {
     gap: 8px;
     flex-wrap: nowrap;
     overflow: hidden;
+}
+
+@media (min-width: 1440px) {
+    .react-horizontal-scrolling-menu--scroll-container {
+        width: 1275px;
+        gap: 20px;
+    }
 }

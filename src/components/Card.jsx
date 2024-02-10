@@ -33,7 +33,7 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
   return (
     <>
       {isTendingSection ? (
-        <div id={"card"} className={"h-[140px] w-[240px]"}>
+        <div id={"card"} className={"h-[140px] w-[240px] lg:h-[230px] lg:w-[470px]"}>
           <picture>
             <source srcSet={"src" + thumbnail.trending.large.substring(1)} media="(min-width: 1440px)" />
             <img className={"rounded-lg"} src={"src" + thumbnail.trending.small.substring(1)} alt={""} />
@@ -43,25 +43,25 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
           </button>
 
           <div id={"card_trending_text"} className={"pb-4 pl-4"}>
-            <ul className={"flex list-image-none space-x-[2px] font-extralight text-project-text-color"}>
-              <li className={"text-[12px]"}>{year}</li>
-              <li className={"flex items-center text-[12px]"}>
+            <ul className={"flex list-image-none space-x-[2px] text-[12px] font-extralight text-project-text-color lg:text-[15px]"}>
+              <li>{year}</li>
+              <li className={"flex items-center"}>
                 {oval}
                 {iconMovie}
-                <span className={"pl-[6px] "}>{category}</span>
+                <span className={"pl-[6px]"}>{category}</span>
               </li>
-              <li className={"flex items-center text-[12px]"}>
+              <li className={"flex items-center"}>
                 {oval}
                 <span className={"pl-[8px]"}>{rating}</span>
               </li>
             </ul>
             <div className={"pt-[4px]"}>
-              <h2 className={"text-[15px] font-light leading-none text-white"}>{title}</h2>
+              <h2 className={"text-[15px] font-light leading-none text-white lg:text-[24px]"}>{title}</h2>
             </div>
           </div>
         </div>
       ) : (
-        <div className={"h-[154px] w-[164px]"}>
+        <div className={"h-[154px] w-[164px] lg:h-[226px] lg:w-[280px]"}>
           <div id={"card"}>
             <picture>
               <source srcSet={"src" + thumbnail.regular.large.substring(1)} media="(min-width: 1440px)" />
@@ -74,20 +74,20 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
           </div>
 
           <div className={"pt-[8px]"}>
-            <ul className={"flex list-image-none space-x-[2px] font-extralight text-project-text-color"}>
-              <li className={"text-[12px]"}>{year}</li>
-              <li className={"flex items-center text-[12px]"}>
+            <ul className={"flex list-image-none space-x-[2px] text-[12px] font-extralight text-project-text-color lg:text-[13px]"}>
+              <li>{year}</li>
+              <li className={"flex items-center"}>
                 {oval}
                 {iconMovie}
                 <span className={"pl-[6px] "}>{category}</span>
               </li>
-              <li className={"flex items-center text-[12px]"}>
+              <li className={"flex items-center"}>
                 {oval}
                 <span className={"pl-[8px]"}>{rating}</span>
               </li>
             </ul>
             <div className={"pt-[4px]"}>
-              <h2 className={"text-[15px] font-light leading-none text-white"}>{title}</h2>
+              <h2 className={"text-[15px] font-light leading-none text-white lg:text-[18px]"}>{title}</h2>
             </div>
           </div>
         </div>
