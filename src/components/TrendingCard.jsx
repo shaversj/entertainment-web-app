@@ -42,7 +42,7 @@ const TrendingCard = () => {
       </button>
 
       <div id={"card_text"} className={"pb-4 pl-4"}>
-        <ul className={"text-project-text-color flex list-image-none space-x-[2px] font-extralight"}>
+        <ul className={"flex list-image-none space-x-[2px] font-extralight text-project-text-color"}>
           <li className={"text-[12px]"}>2019</li>
           <li className={"flex items-center text-[12px]"}>
             {oval}
