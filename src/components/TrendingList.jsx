@@ -38,14 +38,14 @@ const TrendingList = ({ data, handleBookmark }) => {
   }
 
   return (
-    <div className={"-mr-4 space-y-[16px] lg:-mr-0"}>
+    <div className={"-mr-4 space-y-[16px] lg:-mr-0 lg:space-y-[25px]"}>
       <h1 className={"text-[20px] font-extralight text-white lg:text-[32px]"}>Trending</h1>
       <div onMouseLeave={dragStop} className={""}>
         <ScrollMenu LeftArrow={"A"} RightArrow={"B"} onWheel={onWheel} onMouseDown={() => dragStart} onMouseUp={() => dragStop} onMouseMove={handleDrag}>
           {data.map((item) => (
             <Card
               key={item.id}
-              itemId={item.id}
+              id={item.id}
               title={item.title}
               thumbnail={item.thumbnail}
               year={item.year}

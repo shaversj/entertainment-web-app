@@ -19,7 +19,7 @@ const Bookmarked = () => {
     <>
       <Search handleTitleFilter={handleTitleFilter} placeholder={"Search for bookmarked shows"} />
       <SectionList title={titleFilter ? searchResultHeading : "Bookmarked Movies"} data={titleFilter ? filteredBookmarkedShowsByTitle : bookmarkedMovies} handleBookmark={handleBookmark} />
-      {!titleFilter && <SectionList title={"Bookmarked TV Series"} data={bookmarkedTVSeries} handleBookmark={handleBookmark} titleFilter={titleFilter} />}
+      {!titleFilter && <SectionList title={"Bookmarked TV Series"} data={bookmarkedTVSeries} handleBookmark={handleBookmark} />}
     </>
   );
 };

@@ -2,9 +2,9 @@ import Card from "./Card.jsx";
 
 const SectionList = ({ title, data, handleBookmark }) => {
   return (
-    <div className={"space-y-[16px]"}>
+    <div className={"space-y-[16px] lg:space-y-[38px]"}>
       <h1 className={"text-[20px] font-extralight text-white lg:text-[32px]"}>{title}</h1>
-      <div className={"grid grid-cols-2 gap-x-4 lg:grid-cols-4 lg:gap-y-[32px]"}>
+      <div className={"grid grid-cols-2 gap-x-4 gap-y-4 lg:grid-cols-4 lg:gap-x-[10px] lg:gap-y-[32px]"}>
         {data &&
           data.map((item) => (
             <Card

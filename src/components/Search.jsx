@@ -9,7 +9,7 @@ const Search = ({ handleTitleFilter, placeholder }) => {
   );
 
   return (
-    <div className={"flex items-center gap-x-4 pt-[24px] lg:items-end lg:pt-[64px]"}>
+    <div className={"flex items-center gap-x-4 pt-[24px] lg:items-end lg:pt-[30px]"}>
       {iconSearch}
       <input
         className={

@@ -4,9 +4,7 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <nav
-      className={
-        "flex h-[56px] items-center gap-x-[24px] bg-semi-dark-blue px-4 lg:mt-[32px] lg:h-[960px] lg:w-[96px] lg:min-w-[96px] lg:flex-col lg:items-center lg:gap-y-[40px] lg:rounded-2xl lg:pt-[35.41px]"
-      }
+      className={"flex h-[56px] items-center gap-x-[24px] bg-semi-dark-blue px-4 lg:h-[960px] lg:w-[96px] lg:min-w-[96px] lg:flex-col lg:items-center lg:gap-y-[40px] lg:rounded-2xl lg:pt-[35.41px]"}
     >
       <svg className={"h-[1.25rem] w-[1.563rem] lg:h-[25.6px] lg:w-[32px]"} xmlns="http://www.w3.org/2000/svg">
         <path

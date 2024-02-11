@@ -45,7 +45,8 @@ img {
 
 @media (min-width: 1440px) {
     .react-horizontal-scrolling-menu--scroll-container {
-        width: 1275px;
+        width: 1280px;
         gap: 20px;
+        flex-wrap: nowrap;
     }
 }

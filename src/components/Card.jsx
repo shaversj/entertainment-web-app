@@ -30,6 +30,7 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
     </svg>
   );
 
+  console.log(id);
   return (
     <>
       {isTendingSection ? (
@@ -38,7 +39,7 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
             <source srcSet={"src" + thumbnail.trending.large.substring(1)} media="(min-width: 1440px)" />
             <img className={"rounded-lg"} src={"src" + thumbnail.trending.small.substring(1)} alt={""} />
           </picture>
-          <button onClick={() => handleBookmark(title)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
+          <button onClick={() => handleBookmark(id)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
             {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}
           </button>
 
