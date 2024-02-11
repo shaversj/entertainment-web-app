@@ -33,15 +33,15 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
   return (
     <>
       {isTendingSection ? (
-        <div id={"card"} className={"md:h-[230px] md:w-[470px] h-[140px] w-[240px]"}>
+        <div id={"trending_card"} className={"md:h-[230px] md:w-[470px] h-[140px] w-[240px]"}>
           <picture>
             <source srcSet={thumbnail.trending.large} media="(min-width: 768px)" />
             <img className={"rounded-lg"} src={thumbnail.trending.small} alt={"Movie thumbnail"} />
           </picture>
           <button
-            aria-label={"Button to bookmark show"}
+            aria-label={"Button to bookmark trending show"}
             onClick={() => handleBookmark(id)}
-            id={"card_bookmark"}
+            id={"trending_card_bookmark"}
             className={"md:mt-[16px] md:mr-[24px] mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}
           >
             {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}

@@ -11,13 +11,28 @@ img {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+#trending_card {
+    display: grid;
+    grid-template-areas: box;
+}
+
 #card {
     display: grid;
     grid-template-areas: box;
 }
 
+#trending_card picture {
+    grid-area: box;
+}
+
 #card picture {
     grid-area: box;
+}
+
+#trending_card_bookmark {
+    grid-area: box;
+    justify-self: end;
 }
 
 #card_bookmark {
