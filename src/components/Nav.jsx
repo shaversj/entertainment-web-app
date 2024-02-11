@@ -16,7 +16,7 @@ const Nav = () => {
       </svg>
 
       <div className={"ml-auto lg:ml-0 lg:mt-[35px]"}>
-        <NavLink to={"/"}>
+        <NavLink aria-label={"Link to homepage"} to={"/"}>
           {({ isActive }) => (
             <svg
               className={`md:h-[20px] md:w-[20px] h-4 w-4 fill-[#5A698F] hover:fill-bright-red ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
@@ -30,7 +30,7 @@ const Nav = () => {
       </div>
 
       <div>
-        <NavLink to={"/movies"}>
+        <NavLink aria-label={"Link to Movies"} to={"/movies"}>
           {({ isActive }) => (
             <svg
               className={`md:h-[20px] md:w-[20px] h-4 w-4 fill-[#5A698F] hover:fill-bright-red ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
@@ -44,7 +44,7 @@ const Nav = () => {
       </div>
 
       <div>
-        <NavLink to={"/tvseries"}>
+        <NavLink aria-label={"Link to TvSeries"} to={"/tvseries"}>
           {({ isActive }) => (
             <svg
               className={`md:h-[20px] md:w-[20px] h-4 w-4 fill-[#5A698F] hover:fill-bright-red ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
@@ -58,7 +58,7 @@ const Nav = () => {
       </div>
 
       <div>
-        <NavLink to={"/bookmarked"}>
+        <NavLink aria-label={"Look to bookmarked shows"} to={"/bookmarked"}>
           {({ isActive }) => (
             <svg
               className={`md:h-[20px] md:w-[17px] h-4 w-4 fill-[#5A698F] hover:fill-bright-red ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
