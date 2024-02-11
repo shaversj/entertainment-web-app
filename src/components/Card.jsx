@@ -33,17 +33,21 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
   return (
     <>
       {isTendingSection ? (
-        <div id={"card"} className={"h-[140px] w-[240px] lg:h-[230px] lg:w-[470px]"}>
+        <div id={"card"} className={"md:h-[230px] md:w-[470px] h-[140px] w-[240px]"}>
           <picture>
-            <source srcSet={thumbnail.trending.large} media="(min-width: 1440px)" />
+            <source srcSet={thumbnail.trending.large} media="(min-width: 768px)" />
             <img className={"rounded-lg"} src={thumbnail.trending.small} alt={"Movie thumbnail"} />
           </picture>
-          <button onClick={() => handleBookmark(id)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
+          <button
+            onClick={() => handleBookmark(id)}
+            id={"card_bookmark"}
+            className={"md:mt-[16px] md:mr-[24px] mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}
+          >
             {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}
           </button>
 
-          <div id={"card_trending_text"} className={"pb-4 pl-4"}>
-            <ul className={"flex list-image-none space-x-[2px] text-[12px] font-extralight text-project-text-color lg:text-[15px]"}>
+          <div id={"card_trending_text"} className={"md:pb-6 pb-4 pl-4"}>
+            <ul className={"md:text-[15px] flex list-image-none space-x-[2px] text-[12px] font-extralight text-project-text-color"}>
               <li>{year}</li>
               <li className={"flex items-center"}>
                 {oval}
@@ -56,25 +60,29 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
               </li>
             </ul>
             <div className={"pt-[4px]"}>
-              <h2 className={"text-[15px] font-light leading-none text-white lg:text-[24px]"}>{title}</h2>
+              <h2 className={"md:text-[24px] text-[15px] font-light leading-none text-white"}>{title}</h2>
             </div>
           </div>
         </div>
       ) : (
-        <div className={"h-[154px] w-[164px] lg:h-[226px] lg:w-[280px]"}>
+        <div className={"md:w-[220px] md:h-[192px] h-[154px] w-[164px] lg:h-[226px] lg:w-[280px]"}>
           <div id={"card"}>
             <picture>
               <source srcSet={thumbnail.regular.large} media="(min-width: 1440px)" />
-              <source srcSet={thumbnail.regular.medium} media="(min-width: 800px)" />
+              <source srcSet={thumbnail.regular.medium} media="(min-width: 768px)" />
               <img className={"rounded-lg"} src={thumbnail.regular.small} alt={"Movie thumbnail"} />
             </picture>
-            <button onClick={() => handleBookmark(id)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
+            <button
+              onClick={() => handleBookmark(id)}
+              id={"card_bookmark"}
+              className={"md:mr-[16px] md:mt-[16px] mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}
+            >
               {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}
             </button>
           </div>
 
           <div className={"pt-[8px]"}>
-            <ul className={"flex list-image-none space-x-[2px] text-[12px] font-extralight text-project-text-color lg:text-[13px]"}>
+            <ul className={"md:text-[13px] flex list-image-none space-x-[2px] text-[12px] font-extralight text-project-text-color"}>
               <li>{year}</li>
               <li className={"flex items-center"}>
                 {oval}
@@ -87,7 +95,7 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
               </li>
             </ul>
             <div className={"pt-[4px]"}>
-              <h2 className={"text-[15px] font-light leading-none text-white lg:text-[18px]"}>{title}</h2>
+              <h2 className={"md:text-[18px] text-[15px] font-light leading-none text-white"}>{title}</h2>
             </div>
           </div>
         </div>

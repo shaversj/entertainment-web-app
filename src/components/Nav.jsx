@@ -4,7 +4,9 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <nav
-      className={"flex h-[56px] items-center gap-x-[24px] bg-semi-dark-blue px-4 lg:h-[960px] lg:w-[96px] lg:min-w-[96px] lg:flex-col lg:items-center lg:gap-y-[40px] lg:rounded-2xl lg:pt-[35.41px]"}
+      className={
+        "md:rounded-lg md:h-[72px] md:gap-x-[32px] flex h-[56px] items-center gap-x-[24px] bg-semi-dark-blue px-4 lg:h-[960px] lg:w-[96px] lg:min-w-[96px] lg:flex-col lg:items-center lg:gap-y-[40px] lg:rounded-2xl lg:pt-[35.41px]"
+      }
     >
       <svg className={"h-[1.25rem] w-[1.563rem] lg:h-[25.6px] lg:w-[32px]"} xmlns="http://www.w3.org/2000/svg">
         <path
@@ -17,7 +19,7 @@ const Nav = () => {
         <NavLink to={"/"}>
           {({ isActive }) => (
             <svg
-              className={`h-4 w-4 fill-[#5A698F] hover:fill-bright-red lg:h-[20px] lg:w-[20px] ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
+              className={`md:h-[20px] md:w-[20px] h-4 w-4 fill-[#5A698F] hover:fill-bright-red ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
               viewBox={"0 0 20 20"}
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -31,7 +33,7 @@ const Nav = () => {
         <NavLink to={"/movies"}>
           {({ isActive }) => (
             <svg
-              className={`h-4 w-4 fill-[#5A698F] hover:fill-bright-red lg:h-[20px] lg:w-[20px] ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
+              className={`md:h-[20px] md:w-[20px] h-4 w-4 fill-[#5A698F] hover:fill-bright-red ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
               viewBox={"0 0 20 20"}
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -45,7 +47,7 @@ const Nav = () => {
         <NavLink to={"/tvseries"}>
           {({ isActive }) => (
             <svg
-              className={`h-4 w-4 fill-[#5A698F] hover:fill-bright-red lg:h-[20px] lg:w-[20px] ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
+              className={`md:h-[20px] md:w-[20px] h-4 w-4 fill-[#5A698F] hover:fill-bright-red ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
               viewBox={"0 0 20 20"}
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -59,7 +61,7 @@ const Nav = () => {
         <NavLink to={"/bookmarked"}>
           {({ isActive }) => (
             <svg
-              className={`h-4 w-4 fill-[#5A698F] hover:fill-bright-red lg:h-[20px] lg:w-[17px] ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
+              className={`md:h-[20px] md:w-[17px] h-4 w-4 fill-[#5A698F] hover:fill-bright-red ${isActive ? "fill-white" : "fill-[#5A698F]"}`}
               viewBox={"0 0 17 20"}
               xmlns="http://www.w3.org/2000/svg"
             >

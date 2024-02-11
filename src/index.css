@@ -43,6 +43,14 @@ img {
     overflow: hidden;
 }
 
+@media (min-width: 768px) {
+    .react-horizontal-scrolling-menu--scroll-container {
+        width: 743px;
+        gap: 20px;
+        flex-wrap: nowrap;
+    }
+}
+
 @media (min-width: 1440px) {
     .react-horizontal-scrolling-menu--scroll-container {
         width: 1280px;
