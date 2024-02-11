@@ -35,8 +35,8 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
       {isTendingSection ? (
         <div id={"card"} className={"h-[140px] w-[240px] lg:h-[230px] lg:w-[470px]"}>
           <picture>
-            <source srcSet={"src" + thumbnail.trending.large.substring(1)} media="(min-width: 1440px)" />
-            <img className={"rounded-lg"} src={"src" + thumbnail.trending.small.substring(1)} alt={""} />
+            <source srcSet={thumbnail.trending.large.substring(1)} media="(min-width: 1440px)" />
+            <img className={"rounded-lg"} src={thumbnail.trending.small.substring(1)} alt={"Movie thumbnail"} />
           </picture>
           <button onClick={() => handleBookmark(id)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
             {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}
@@ -64,9 +64,9 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
         <div className={"h-[154px] w-[164px] lg:h-[226px] lg:w-[280px]"}>
           <div id={"card"}>
             <picture>
-              <source srcSet={"src" + thumbnail.regular.large.substring(1)} media="(min-width: 1440px)" />
-              <source srcSet={"src" + thumbnail.regular.medium.substring(1)} media="(min-width: 800px)" />
-              <img className={"rounded-lg"} src={"src" + thumbnail.regular.small.substring(1)} alt={""} />
+              <source srcSet={thumbnail.regular.large} media="(min-width: 1440px)" />
+              <source srcSet={thumbnail.regular.medium} media="(min-width: 800px)" />
+              <img className={"rounded-lg"} src={thumbnail.regular.small.substring} alt={"Movie thumbnail"} />
             </picture>
             <button onClick={() => handleBookmark(id)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
               {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}
