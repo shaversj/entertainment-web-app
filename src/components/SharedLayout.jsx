@@ -6,7 +6,6 @@ import { originalData } from "../projectData.jsx";
 const SharedLayout = () => {
   const [data, setData] = useState(originalData);
   function handleBookmark(id) {
-    console.log(id);
     setData(
       data.map((item) => {
         if (item.id === id) {

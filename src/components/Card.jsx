@@ -30,7 +30,6 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
     </svg>
   );
 
-  console.log(id);
   return (
     <>
       {isTendingSection ? (
