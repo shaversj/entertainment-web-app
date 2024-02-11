@@ -21,7 +21,7 @@ const SharedLayout = () => {
       <div className={"flex items-center justify-center bg-black lg:items-stretch"}>
         <div className={"min-h-[667px] w-full min-w-[375px] max-w-screen-sm bg-dark-blue font-Outfit lg:grid lg:min-w-[1440px] lg:max-w-[1440px] lg:grid-cols-[auto,1fr] lg:pl-[32px] lg:pt-[32px]"}>
           <Nav />
-          <main className={"space-y-[24px] px-4 lg:min-h-screen lg:pl-[32px]"}>
+          <main className={"min-h-screen space-y-[24px] px-4 lg:pl-[32px]"}>
             <Outlet context={{ data, handleBookmark }} />
           </main>
         </div>
