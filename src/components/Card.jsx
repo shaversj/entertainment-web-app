@@ -39,6 +39,7 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
             <img className={"rounded-lg"} src={thumbnail.trending.small} alt={"Movie thumbnail"} />
           </picture>
           <button
+            aria-label={"Button to bookmark show"}
             onClick={() => handleBookmark(id)}
             id={"card_bookmark"}
             className={"md:mt-[16px] md:mr-[24px] mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}
@@ -73,6 +74,7 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
               <img className={"rounded-lg"} src={thumbnail.regular.small} alt={"Movie thumbnail"} />
             </picture>
             <button
+              aria-label={"Button to bookmark show"}
               onClick={() => handleBookmark(id)}
               id={"card_bookmark"}
               className={"md:mr-[16px] md:mt-[16px] mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}
