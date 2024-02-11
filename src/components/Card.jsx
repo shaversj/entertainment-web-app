@@ -66,7 +66,7 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
             <picture>
               <source srcSet={thumbnail.regular.large} media="(min-width: 1440px)" />
               <source srcSet={thumbnail.regular.medium} media="(min-width: 800px)" />
-              <img className={"rounded-lg"} src={thumbnail.regular.small.substring} alt={"Movie thumbnail"} />
+              <img className={"rounded-lg"} src={thumbnail.regular.small} alt={"Movie thumbnail"} />
             </picture>
             <button onClick={() => handleBookmark(id)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
               {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}
