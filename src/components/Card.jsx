@@ -35,8 +35,8 @@ const Card = ({ id, title, thumbnail, year, category, rating, isBookmarked, isTr
       {isTendingSection ? (
         <div id={"card"} className={"h-[140px] w-[240px] lg:h-[230px] lg:w-[470px]"}>
           <picture>
-            <source srcSet={"src" + thumbnail.trending.large.substring(1)} media="(min-width: 1440px)" />
-            <img className={"rounded-lg"} src={"src" + thumbnail.trending.small.substring(1)} alt={"Movie thumbnail"} />
+            <source srcSet={thumbnail.trending.large} media="(min-width: 1440px)" />
+            <img className={"rounded-lg"} src={thumbnail.trending.small} alt={"Movie thumbnail"} />
           </picture>
           <button onClick={() => handleBookmark(id)} id={"card_bookmark"} className={"mr-[8px] mt-[8px] flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#566074]"}>
             {isBookmarked ? iconBookMarkFull : iconBookmarkEmpty}
